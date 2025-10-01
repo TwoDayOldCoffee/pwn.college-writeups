@@ -62,7 +62,12 @@ the challenge wants us to delete the 'delete_me" file and run '/challenge/check'
 
 ~$ rm delete_me<br>
 ~$ /challenge/check<br>
-will give us the flag
+will give us the flag 
+
+### moving files
+```pwn.college{Qt1sRv8Il_urua0TdCYVhNkGlVI.QX5ETM3EDL1gTN0czW}```  
+~$ mv /flag /tmp/hack-the-planet  
+will move the /flag file into /tmp/hack-the-planet and then /challenge/run will give us the flag  
 
 ### hidden files
 ```pwn.college{IoPu-ozVmxNOce4b2UVn8gRHAyx.dBTN4QDL1gTN0czW}```
