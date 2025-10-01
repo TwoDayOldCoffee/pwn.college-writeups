@@ -40,6 +40,13 @@ Since globbing happens on a path basis, we can use the globs in our path argumen
 ```  
 Since we need to run the program from our home directory, while needing to file glob the files, we can give it the argument- '/challenge/files/file_[bash]' and this will give us our flag
 
+### Multiple globs
+```
+pwn.college{cB5wDK9uFDKHbUPlrEyLFBZi_9W.QXycTO2EDL1gTN0czW}
+```  
+```:/challenge/files$ /challenge/run *p*```  
+Running the above statement in /challenge/files will give us the flag as *p* covers every word that has the letter p.  
+
 ### Mixing Globs
 ```pwn.college{kuCdYER7_KjCFGWTq4oveFAz9US.dVjM4QDL1gTN0czW}```  
 
@@ -59,8 +66,33 @@ will give us the flag
 ```pwn.college{skmoNB4fB3u8rWbW7o3PJ9DLCTN.dZjM4QDL1gTN0czW}```
 
 the ^ character in [] will invert the functionality of the glob and use the files which dont have the characters entered, since we need to use the files not starting with p,w,n, our argument will be- [^pwn]*  
-```
-~$ cd /challenge/files
-/challenge/files$ /challenge/run [^pwn]*
-```
+```  
+~$ cd /challenge/files  
+/challenge/files$ /challenge/run [^pwn]*  
+```  
 will give us the flag
+
+### Tab completion  
+```  
+pwn.college{MPu0WDv7yMZh5RkI_Qs7ieYVaix.QX0QTM3EDL1gTN0czW}
+```  
+```
+~$ cat /challenge/pwncollege​
+```
+after we type the above command, press tab and enter, it will give us the flag.  
+
+### Multiple Options for Tab Completion
+```
+pwn.college{gXlH5o0qzLkXZFpYMiLC29D1RKp.QX2QTM3EDL1gTN0czW}
+```
+We need to first cd into the ```/challenge/files``` directory.  
+Typing ```cat pwncollege``` and pressing <TAB> twice will give us the following list of flags- ```pwncollege-family, pwncollege-flag, pwncollege-flamingo, pwncollege-flyswatter, pwncollege-hacking```  
+```:/challenge/files$ cat pwncollege-flag``` will then give us the flag.  
+
+### Tab Completion on Commands
+```
+pwn.college{8VtzqCJof8tnN1wsz6nCUezFYc_.QX1QTM3EDL1gTN0czW}
+```
+Since <TAB> completed commands too, tping it after ```pwncollege``` will autocomplete the command to ```pwncollege-13940``` which will give us the flag.  
+
+
