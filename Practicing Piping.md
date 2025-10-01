@@ -85,6 +85,12 @@ First we redirect standard error to standard output and then pipe it to grep too
 ```~$ /challenge/run 2>&1 | grep -i "pwn.college"```  
 This gives us the flag directly as the output.  
 
+### Filtering with grep -v  
+```pwn.college{01QZkyD5oCpHa3OC5MigtciezBZ.QX4ETM3EDL1gTN0czW}```  
+
+The ```-v``` option inverts the functionality of the grep command.  
+In this problem we can use ```~$ /challenge/run | grep -v DECOY``` to filter out the decoy flags and get the right one.  
+
 ### Duplicating piped data with tee  
 ```pwn.college{wbQzaoW6sUCfS1Xx87IqC1NM0NB.dFjM5QDL1gTN0czW}```
 
@@ -100,6 +106,13 @@ SECRET_ARG should be "wbQzaoW6"
 The error now tells us what we need to do to get the flag, hence-  
 ```~$ /challenge/pwn --secret wbQzaoW6 | /challenge/college```  
 Will give us the flag.  
+
+
+### Process Substitution for Input
+```pwn.college{ErWTySELtcVH0mgHJUN1tdigFdp.QX2AzM4EDL1gTN0czW}```  
+
+Since linux treats everything as a file, running a command which prints a file will create a tempory file and we can use ```diff``` on that to get the answer.  
+```~$ diff <(/challenge/print_decoys) <(/challenge/print_decoys_and_flag)``` gives us the answer.  
 
 ### Writing to Multiple Programs
 ```pwn.college{ITaoWiK9r0nXmZJNVL51YO5HQ1m.dBDO0UDL1gTN0czW}```
