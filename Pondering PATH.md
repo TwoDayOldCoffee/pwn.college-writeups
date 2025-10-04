@@ -18,6 +18,16 @@ The PATH variable can also be given a value to help us run a command just by its
 ```
 Will give us the flag
 
+### Finding Commands
+```pwn.college{YunbB9Kk1NvKb914yJaYdZJWJ-h.QX3MTM3EDL1gTN0czW}```
+
+```which``` can be used to find the file address. we can use this to find the flag file in this challenge.  
+```
+~$ which win
+/challenge/paths/13177/win
+~$ cat /challenge/paths/13177/flag
+```
+
 ### Adding Commands
 ```pwn.college{QdcfJ91hON5f-H-sBzyJ7sdSj1p.dZzNyUDL1gTN0czW}```
 
